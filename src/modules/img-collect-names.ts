@@ -1,5 +1,5 @@
 import path from "path";
-import { promises as fsPromises } from "fs";
+import fs from "fs";
 
 /**
  * @description Extract file names within specific directory.
@@ -7,12 +7,12 @@ import { promises as fsPromises } from "fs";
  * @returns {Array<string>} Extracted list of file names without file extensions.
  */
 
-const fullImagesNames = async (imagesDirName: string): Promise<Array<string>> => {
+const fullImagesNames = (imagesDirName: string): Array<string> => {
     // construct the full path of the desired directory:
     const fullPath: string = path.join(__dirname, imagesDirName);
 
     // read specific directory to extract its inner files:
-    const fullImagesList = await fsPromises.readdir(fullPath);
+    const fullImagesList = fs.readdirSync(fullPath);
 
     // remove file extension from file names:
     for (let i=0; i<fullImagesList.length; i++) {

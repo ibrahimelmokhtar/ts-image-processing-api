@@ -1,5 +1,5 @@
 import path from "path";
-import fs, { promises as fsPromises } from "fs";
+import fs from "fs";
 
 
 /**
@@ -7,7 +7,7 @@ import fs, { promises as fsPromises } from "fs";
  * @param {string} imagesDirName
  * @returns {boolean} whether a directory exists or not.
  */
-const checkOutputDirectory = async (imagesDirName: string): Promise<boolean> => {
+const checkOutputDirectory = (imagesDirName: string): boolean => {
     // status of the directory:
     let isFound: boolean = false;
 
@@ -29,12 +29,12 @@ const checkOutputDirectory = async (imagesDirName: string): Promise<boolean> => 
  * @description Create directory using its name.
  * @param {string} imagesDirName
  */
-const createOutputDirectory = async (imagesDirName: string): Promise<void> => {
+const createOutputDirectory = (imagesDirName: string): void => {
     // construct the full path of the directory:
     const outputPath = path.join(__dirname, imagesDirName);
 
     // create the directory:
-    fsPromises.mkdir(outputPath);
+    fs.mkdirSync(outputPath);
 };
 
 export default checkOutputDirectory;
