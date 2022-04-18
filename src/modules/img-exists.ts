@@ -8,6 +8,7 @@ import fullImagesNames from "./img-collect-names";
  * @returns {boolean} whether an image exists or not.
  */
 const checkImageExistence = async (imagesDirName: string, imageName: string): Promise<boolean> => {
+    // status of the image:
     let isFound: boolean = false;
 
     // obtain ALL images names from specific directory:

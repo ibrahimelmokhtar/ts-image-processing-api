@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import fullImagesNames from './modules/img-collect-names';
 import checkImageExistence from './modules/img-exists';
-import checkOutputDirectory from './modules/outDir-exists';
+import checkOutputDirectory from './modules/dir-exists';
 
 
 const port: string = (process.env.PORT || '5000');
@@ -30,8 +30,10 @@ app.get('/resize', async (req: Request, res: Response): Promise<void> => {
     console.log('checking directories:');
     let isDirectoryFound: boolean = await checkOutputDirectory('../../src/');
     console.log(`This should be TRUE: ${isDirectoryFound}`);
-    isDirectoryFound = await checkOutputDirectory('../../src/output');
-    console.log(`This should be FALSE: ${isDirectoryFound}\n`);
+    isDirectoryFound = await checkOutputDirectory('../../src/out');
+    console.log(`This should be FALSE: ${isDirectoryFound}`);
+    isDirectoryFound = await checkOutputDirectory('../../src/out');
+    console.log(`This should be TRUE: ${isDirectoryFound}\n`);
 
     res.end();
 });
