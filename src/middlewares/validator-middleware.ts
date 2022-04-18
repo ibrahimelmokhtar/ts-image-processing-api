@@ -11,9 +11,7 @@ import { validationResult } from 'express-validator';
 const validateQuery = (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
 
-    if (errors.isEmpty()) {
-        console.log(req.query);
-    } else {
+    if (!errors.isEmpty()) {
         console.log({errors: errors.array({onlyFirstError: true})});
         return res.status(400).json({errors: errors.array({onlyFirstError: true})});
     }
