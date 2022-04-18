@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import validateQuery from './middlewares/validator-middleware';
 import resizeValidationRules from './schemas/query-schema';
+import createImageName from './modules/img-create-name';
 
 
 const port: string = (process.env.PORT || '5000');
@@ -23,7 +24,14 @@ app.get(
 
         console.log('inside (/resize) route ...\n');
 
-        res.end();
+        const fileName: string = (req.query.filename as unknown) as string;
+        const width: number = (req.query.width as unknown) as number;
+        const height: number = (req.query.height as unknown) as number;
+
+        const newFileName = createImageName(fileName, width, height);
+        console.log(`created file: ${newFileName}`);
+
+        res.sendStatus(200);
 });
 
 app.listen(port, (): void => {

@@ -15,6 +15,7 @@ const validateQuery = (req: Request, res: Response, next: NextFunction) => {
         console.log(req.query);
     } else {
         console.log({errors: errors.array({onlyFirstError: true})});
+        return res.status(400).json({errors: errors.array({onlyFirstError: true})});
     }
 
     next();
