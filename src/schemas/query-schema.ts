@@ -17,6 +17,7 @@ const resizeValidationRules = [
         .exists().withMessage('Image width is required!')
         .notEmpty().withMessage('Image width is empty')
         .toInt().isNumeric().withMessage('Width must be a number')
+        .isInt({min: 100}).withMessage('Image min-width is 100')
         .isInt({max: 1000}).withMessage('Image max-width is 1000'),
 
     // (height) parameter validation:
@@ -24,6 +25,7 @@ const resizeValidationRules = [
         .exists().withMessage('Image height is required!')
         .notEmpty().withMessage('Image height is empty')
         .toInt().isNumeric().withMessage('Width must be a number')
+        .isInt({min: 100}).withMessage('Image min-height is 100')
         .isInt({max: 1000}).withMessage('Image max-height is 1000'),
 ];
 

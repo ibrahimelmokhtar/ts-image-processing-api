@@ -4,6 +4,7 @@ import resizeValidationRules from './schemas/query-schema';
 import createImageName from './modules/img-create-name';
 import checkImageExistence from './modules/img-exists';
 import checkOutputDirectory from './modules/dir-exists';
+import resizeImage from './modules/process-resize';
 
 
 const port: string = (process.env.PORT || '5000');
@@ -33,7 +34,7 @@ app.get(
 
         // construct the new filename:
         const newFileName = createImageName(fileName, width, height);
-        console.log(`created file: ${newFileName}`);
+        console.log(`created file: ${newFileName}.jpg`);
 
         // check /out directory existence:
         const isDirectoryFound = checkOutputDirectory('../../out');
@@ -48,6 +49,7 @@ app.get(
         } else {
             // apply resizing process to the image.
             console.log('apply resizing process to the image.');
+            resizeImage(fileName, width, height, newFileName);
         }
 
         res.sendStatus(200);
