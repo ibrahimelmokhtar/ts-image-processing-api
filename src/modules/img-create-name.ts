@@ -9,7 +9,7 @@
  */
 const createImageName = (imgName: string, width: number, height: number): string => {
     // construct desired name:
-    const outputImageName: string = `${imgName}_w${width}_h${height}.jpg`;
+    const outputImageName: string = `${imgName}_w${width}_h${height}`;
 
     return outputImageName;
 }
