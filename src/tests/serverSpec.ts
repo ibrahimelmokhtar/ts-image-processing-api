@@ -1,7 +1,6 @@
 
 
-describe('Suite Description', () => {
-    it('checks testing is configured correctly.', () => {
-        console.log('Configuration is correct.');
+describe('Configuration Suite', () => {
+    it('checks testing is configured correctly', () => {
     });
 });
