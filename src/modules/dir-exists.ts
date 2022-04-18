@@ -16,10 +16,8 @@ const checkOutputDirectory = async (imagesDirName: string): Promise<boolean> => 
 
     // check directory existence, then create it if it does NOT exist:
     if (fs.existsSync(outputPath)) {
-        console.log('Directory exists ...');
         isFound = true;
     } else {
-        console.log('Directory will be created now ...');
         createOutputDirectory(imagesDirName);
     }
 
