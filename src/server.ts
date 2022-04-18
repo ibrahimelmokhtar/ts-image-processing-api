@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import fullImagesNames from './modules/img-collect-names';
+import checkImageExistence from './modules/img-exists';
 
 const port: string = (process.env.PORT || '5000');
 const host: string = 'http://127.0.0.1';
@@ -16,6 +17,11 @@ app.get('/resize', async (req: Request, res: Response): Promise<void> => {
 
     const imagesList = await fullImagesNames('../images');
     console.log(imagesList);
+
+    let isOriginalFound: boolean = await checkImageExistence('../images', 'encenadaport');
+    console.log(`This should be TRUE: ${isOriginalFound}`);
+    isOriginalFound = await checkImageExistence('../images', 'anyOtherNameThatDoesNotExist');
+    console.log(`This should be FALSE: ${isOriginalFound}`);
 
     res.end();
 });
