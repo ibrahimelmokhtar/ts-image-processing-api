@@ -22,7 +22,7 @@ grayScaleRoute.get(
 		const fileName: string = req.query.filename as unknown as string;
 
 		// construct the new filename:
-		const newFileName = createImageName(fileName);
+		const newFileName = createImageName(fileName, { keyword: 'grayscale' });
 
 		// check /out directory existence:
 		checkOutputDirectory('../../out');

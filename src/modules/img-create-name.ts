@@ -1,22 +1,35 @@
 /**
  * @description Create desired name for the output image.
  * @param {string} imgName
- * @param {number} width
- * @param {number} height
+ * @param {Object} options
  * @returns {string} the constructed name.
  */
 const createImageName = (
 	imgName: string,
-	width?: number,
-	height?: number
+	options: {
+		keyword: undefined | string;
+		width?: undefined | number;
+		height?: undefined | number;
+		threshold?: undefined | number;
+	}
 ): string => {
 	// construct desired name:
-	let outputImageName: string = `${imgName}_`;
+	let outputImageName: string = `${imgName}_${options.keyword}`;
 
-	if (width !== undefined && height !== undefined) {
-		outputImageName += `w${width}_h${height}`;
-	} else {
-		outputImageName += 'grayscale';
+	switch (options.keyword) {
+		case 'resize':
+			outputImageName += `_w${options?.height}_h${options?.height}`;
+			break;
+
+		case 'grayscale':
+			break;
+
+		case 'threshold':
+			outputImageName += `_th${options?.threshold}`;
+			break;
+
+		default:
+			break;
 	}
 
 	return outputImageName;
