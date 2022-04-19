@@ -27,7 +27,7 @@ resizeRoute.get(
 		const newFileName = createImageName(fileName, width, height);
 
 		// check /out directory existence:
-		const isDirectoryFound = checkOutputDirectory('../../out');
+		checkOutputDirectory('../../out');
 
 		// check processed image existence:
 		const isProcessedImageFound: boolean = checkImageExistence(
