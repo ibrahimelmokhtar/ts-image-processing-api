@@ -1,5 +1,5 @@
-import path from "path";
-import fs from "fs";
+import path from 'path';
+import fs from 'fs';
 
 /**
  * @description Extract file names within specific directory.
@@ -8,18 +8,18 @@ import fs from "fs";
  */
 
 const fullImagesNames = (imagesDirName: string): Array<string> => {
-    // construct the full path of the desired directory:
-    const fullPath: string = path.join(__dirname, imagesDirName);
+	// construct the full path of the desired directory:
+	const fullPath: string = path.join(__dirname, imagesDirName);
 
-    // read specific directory to extract its inner files:
-    const fullImagesList = fs.readdirSync(fullPath);
+	// read specific directory to extract its inner files:
+	const fullImagesList = fs.readdirSync(fullPath);
 
-    // remove file extension from file names:
-    for (let i=0; i<fullImagesList.length; i++) {
-        fullImagesList[i] = path.parse(fullImagesList[i]).name;
-    }
+	// remove file extension from file names:
+	for (let i = 0; i < fullImagesList.length; i++) {
+		fullImagesList[i] = path.parse(fullImagesList[i]).name;
+	}
 
-    return fullImagesList;
+	return fullImagesList;
 };
 
 export default fullImagesNames;

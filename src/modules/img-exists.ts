@@ -1,5 +1,4 @@
-import fullImagesNames from "./img-collect-names";
-
+import fullImagesNames from './img-collect-names';
 
 /**
  * @description Check whether an image exists in specific directory or not.
@@ -7,22 +6,25 @@ import fullImagesNames from "./img-collect-names";
  * @param {string} imageName
  * @returns {boolean} whether an image exists or not.
  */
-const checkImageExistence = (imagesDirName: string, imageName: string): boolean => {
-    // status of the image:
-    let isFound: boolean = false;
+const checkImageExistence = (
+	imagesDirName: string,
+	imageName: string
+): boolean => {
+	// status of the image:
+	let isFound: boolean = false;
 
-    // obtain ALL images names from specific directory:
-    const imagesNameList: Array<string> = fullImagesNames(imagesDirName);
+	// obtain ALL images names from specific directory:
+	const imagesNameList: Array<string> = fullImagesNames(imagesDirName);
 
-    // check the existence of image name within the collected images:
-    for (let i=0; i <imagesNameList.length; i++) {
-        if (imagesNameList[i] === imageName) {
-            isFound = true;
-            break;
-        }
-    }
+	// check the existence of image name within the collected images:
+	for (let i = 0; i < imagesNameList.length; i++) {
+		if (imagesNameList[i] === imageName) {
+			isFound = true;
+			break;
+		}
+	}
 
-    return isFound;
+	return isFound;
 };
 
 export default checkImageExistence;

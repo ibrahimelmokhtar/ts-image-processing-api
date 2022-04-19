@@ -1,6 +1,5 @@
-import express from "express";
-import resizeRoute from "./api/resize";
-
+import express from 'express';
+import resizeRoute from './api/resize';
 
 // create an express route:
 const mainRoute = express.Router();
