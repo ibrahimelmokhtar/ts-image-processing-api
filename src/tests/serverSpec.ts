@@ -68,4 +68,23 @@ describe('Server Endpoints Suites', () => {
 			expect(res.status).toBe(400);
 		});
 	});
+
+	describe('Negative Route Suite', () => {
+		it('gets /api/negative response after applying negative operation', async () => {
+			const res = await req.get('/api/negative?filename=santamonica');
+			expect(res.status).toBe(200);
+		});
+
+		it('gets /api/negative response from cache memory', async () => {
+			const res = await req.get('/api/negative?filename=santamonica');
+			expect(res.status).toBe(200);
+		});
+
+		it('gets /api/negative response for an image that does NOT exist', async () => {
+			const res = await req.get(
+				'/api/negative?filename=anyOtherNameThatDoesNotExist'
+			);
+			expect(res.status).toBe(400);
+		});
+	});
 });

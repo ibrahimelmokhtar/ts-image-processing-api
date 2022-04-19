@@ -22,6 +22,7 @@ const createImageName = (
 			break;
 
 		case 'grayscale':
+		case 'negative':
 			break;
 
 		case 'threshold':
