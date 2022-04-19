@@ -11,7 +11,7 @@ import sharp, { ResizeOptions } from "sharp";
  */
 const resizeImage = (fileName: string, width: number, height: number, newFileName: string): void => {
     // set used images path:
-    const originalImagePath: string = path.resolve(`${__dirname}/../images/${fileName}.jpg`);
+    const originalImagePath: string = path.resolve(`${__dirname}/../../images/${fileName}.jpg`);
     const processedImagePath: string = path.resolve(`${__dirname}/../../out/${newFileName}.jpg`);
 
     // set processing options:

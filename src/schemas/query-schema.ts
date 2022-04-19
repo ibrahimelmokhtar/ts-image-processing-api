@@ -10,7 +10,7 @@ const resizeValidationRules = [
     query('filename')
         .exists().withMessage('Image name is required!')
         .notEmpty().withMessage('Image name is empty')
-        .isIn(fullImagesNames('../images')).withMessage('Image name does NOT exist'),
+        .isIn(fullImagesNames('../../images')).withMessage('Image name does NOT exist'),
 
     // (width) parameter validation:
     query('width')
