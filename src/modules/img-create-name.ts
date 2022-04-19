@@ -7,11 +7,17 @@
  */
 const createImageName = (
 	imgName: string,
-	width: number,
-	height: number
+	width?: number,
+	height?: number
 ): string => {
 	// construct desired name:
-	const outputImageName: string = `${imgName}_w${width}_h${height}`;
+	let outputImageName: string = `${imgName}_`;
+
+	if (width !== undefined && height !== undefined) {
+		outputImageName += `w${width}_h${height}`;
+	} else {
+		outputImageName += 'grayscale';
+	}
 
 	return outputImageName;
 };

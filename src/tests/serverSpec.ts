@@ -1,5 +1,5 @@
 import supertest from 'supertest';
-import { app } from '../server/config';
+import { app } from '../server/server.config';
 
 const req = supertest(app);
 

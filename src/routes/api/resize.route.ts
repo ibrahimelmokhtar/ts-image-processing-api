@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
-import validateQuery from '../../middlewares/validator-middleware';
-import resizeValidationRules from '../../schemas/query-schema';
+import validateQuery from '../../middlewares/validator.middleware';
+import resizeValidationRules from '../../schemas/resize.schema';
 import createImageName from '../../modules/img-create-name';
 import checkImageExistence from '../../modules/img-exists';
 import checkOutputDirectory from '../../modules/dir-exists';
