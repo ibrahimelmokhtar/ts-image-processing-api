@@ -77,11 +77,25 @@ To use this project, you need to follow the commands below:
         npm run test
         ```
 
-6. *For working with the production phase*, run the following command:
+6. *For working with the production phase*, run the following commands:
 
-    ```bash
-    npm run start
-    ```
+   - *Build the project*:
+
+        ```bash
+        npm run build
+        ```
+
+        Then, *Run the compiled server*:
+
+        ```bash
+        node build/server.js
+        ```
+
+   - OR simply, *Start the server with one command*:
+
+        ```bash
+        npm run start
+        ```
 
 7. Open the local website on `http://127.0.0.1:5000/api/{processType}?{queryParameters}`, more information about {processType} and {queryParameters} will be explained in [API Endpoints](#api-endpoints)
 
@@ -252,7 +266,9 @@ This request will return an image `santamonica_negative` with `.jpg` as the file
 [(Back to top)](#table-of-contents)
 
 1. Place images to be processed inside `images/` directory with `.jpg` format.
-   - *Note*: currently available images: *encenadaport*, *fjord*, *icelandwaterfall*, *palmtunnel*, and *santamonica*.
+   - *NOTE*:
+     - The server will figure out the available images automatically.
+     - Currently available images: *encenadaport*, *fjord*, *icelandwaterfall*, *palmtunnel*, and *santamonica*.
 
 2. Call one of the available [API endpoints](#api-endpoints) with its query parameters.
 3. Apply query validation rules on the called request.
