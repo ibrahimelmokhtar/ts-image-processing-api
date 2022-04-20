@@ -149,11 +149,11 @@ This project has the structure shown below:
     ├─── tests/
         ├─── helpers/
             ├─── reporter.ts
-        ├─── dirExistsSpec.ts
-        ├─── imgCollectNamesSpec.ts
-        ├─── imgCreateNameSpec.ts
-        ├─── imgExistsSpec.ts
-        ├─── serverSpec.ts
+        ├─── dir-exists.spec.ts
+        ├─── img-collect-names.spec.ts
+        ├─── img-create-name.spec.ts
+        ├─── img-exists.spec.ts
+        ├─── server.spec.ts
     ├─── server.ts
 ├─── .eslintrc
 ├─── .gitignore
