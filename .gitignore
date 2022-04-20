@@ -1,3 +1,6 @@
+# Full Directories:
 node_modules/
 out/
+
+# Seperate Files:
 package-lock.json
