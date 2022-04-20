@@ -43,17 +43,15 @@ resizeRoute.get(
 			// return the processed image ...
 			console.log('return the processed image ...');
 		} else {
-			// apply resizing process to the image.
+			// apply resize process to the image.
 			console.log('apply resizing process to the image.');
-			resizeImage(fileName, width, height, newFileName);
+			await resizeImage(fileName, width, height, newFileName);
 		}
 
-		// set delay before responding with the result:
-		setTimeout(() => {
-			res.sendFile(
-				path.resolve(__dirname, `../../../out/${newFileName}.jpg`)
-			);
-		}, 200);
+		// respond with the result:
+		res.sendFile(
+			path.resolve(__dirname, `../../../out/${newFileName}.jpg`)
+		);
 	}
 );
 

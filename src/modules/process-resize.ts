@@ -8,12 +8,12 @@ import sharp, { ResizeOptions } from 'sharp';
  * @param {number} height
  * @param {string} newFileName
  */
-const resizeImage = (
+const resizeImage = async (
 	fileName: string,
 	width: number,
 	height: number,
 	newFileName: string
-): void => {
+): Promise<void> => {
 	// set used images path:
 	const originalImagePath: string = path.resolve(
 		`${__dirname}/../../images/${fileName}.jpg`
@@ -28,7 +28,7 @@ const resizeImage = (
 	};
 
 	// apply resize operation:
-	sharp(originalImagePath)
+	await sharp(originalImagePath)
 		.resize(width, height, processingOptions)
 		.toFile(processedImagePath);
 };

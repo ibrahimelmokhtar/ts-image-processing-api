@@ -299,8 +299,6 @@ These packages can be found in the `"dependencies"` object inside the `package.j
 - [express](https://www.npmjs.com/package/express) - Fast, unopinionated, minimalist web framework.
 - [express-validator](https://www.npmjs.com/package/express-validator) - Express middleware for the validator module.
 - [sharp](https://www.npmjs.com/package/sharp) - High-performance Node.js image processing.
-- [fs](https://www.npmjs.com/package/fs) - Enables interacting with the file system.
-- [path](https://www.npmjs.com/package/path) - Node.JS path module.
 
 ### Development Packages
 

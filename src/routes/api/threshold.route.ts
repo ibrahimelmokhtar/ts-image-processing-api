@@ -41,17 +41,15 @@ thresholdRoute.get(
 			// return the processed image ...
 			console.log('return the processed image ...');
 		} else {
-			// apply resizing process to the image.
+			// apply threshold process to the image.
 			console.log('apply resizing process to the image.');
-			thresholdImage(fileName, newFileName);
+			await thresholdImage(fileName, newFileName);
 		}
 
-		// set delay before responding with the result:
-		setTimeout(() => {
-			res.sendFile(
-				path.resolve(__dirname, `../../../out/${newFileName}.jpg`)
-			);
-		}, 200);
+		// respond with the result:
+		res.sendFile(
+			path.resolve(__dirname, `../../../out/${newFileName}.jpg`)
+		);
 	}
 );
 

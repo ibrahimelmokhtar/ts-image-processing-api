@@ -6,7 +6,10 @@ import sharp from 'sharp';
  * @param {string} fileName
  * @param {string} newFileName
  */
-const thresholdImage = (fileName: string, newFileName: string): void => {
+const thresholdImage = async (
+	fileName: string,
+	newFileName: string
+): Promise<void> => {
 	// set used images path:
 	const originalImagePath: string = path.resolve(
 		`${__dirname}/../../images/${fileName}.jpg`
@@ -15,8 +18,8 @@ const thresholdImage = (fileName: string, newFileName: string): void => {
 		`${__dirname}/../../out/${newFileName}.jpg`
 	);
 
-	// apply resize operation:
-	sharp(originalImagePath).threshold().toFile(processedImagePath);
+	// apply threshold operation:
+	await sharp(originalImagePath).threshold().toFile(processedImagePath);
 };
 
 export default thresholdImage;

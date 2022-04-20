@@ -6,7 +6,10 @@ import sharp from 'sharp';
  * @param {string} fileName
  * @param {string} newFileName
  */
-const negativeImage = (fileName: string, newFileName: string): void => {
+const negativeImage = async (
+	fileName: string,
+	newFileName: string
+): Promise<void> => {
 	// set used images path:
 	const originalImagePath: string = path.resolve(
 		`${__dirname}/../../images/${fileName}.jpg`
@@ -15,8 +18,8 @@ const negativeImage = (fileName: string, newFileName: string): void => {
 		`${__dirname}/../../out/${newFileName}.jpg`
 	);
 
-	// apply resize operation:
-	sharp(originalImagePath).negate().toFile(processedImagePath);
+	// apply negative operation:
+	await sharp(originalImagePath).negate().toFile(processedImagePath);
 };
 
 export default negativeImage;
