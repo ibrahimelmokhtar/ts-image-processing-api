@@ -15,6 +15,78 @@ body * {
 
 
 /* ************************************************************************* */
+/* *****************************    Header    ****************************** */
+/* ************************************************************************* */
+header {
+    background-color: #f7f5f2;
+    padding: 10px 40px;
+    width: 100%;
+    line-height: 1.6;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Page's Main Title */
+header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header h1 {
+    font-size: 20pt;
+    font-weight: 700;
+}
+
+
+header h2 {
+    font-size: 16pt;
+    font-weight: 500;
+}
+
+
+header a:hover {
+    color: #4d96ff;
+    text-decoration: none;
+}
+
+
+/* Available Routes List */
+header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+
+/* Single Route Item */
+header li {
+    background-color: #383838;
+    color: #4d96ff;
+    padding: 5px 10px;
+    font-weight: 600;
+
+    border: 2px solid #383838;
+    border-radius: 6px;
+}
+
+
+header li:hover {
+    cursor: pointer;
+    background-color: #4d96ff;
+    color: #383838;
+}
+
+
+/* ************************************************************************* */
 /* *****************************    Footer    ****************************** */
 /* ************************************************************************* */
 footer {
