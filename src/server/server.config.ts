@@ -21,6 +21,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
 	console.log('\ninside (/) route ...');
+
 	res.render('index');
 });
 

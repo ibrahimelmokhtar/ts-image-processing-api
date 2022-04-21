@@ -1,0 +1,13 @@
+<form action="/api/threshold" method="get">
+    <div class="form__item">
+        <label for="filename">File Name:</label>
+        <input type="text" name="filename" id="filename" placeholder="Enter Image File Name ..." required>
+    </div>
+
+    <div class="form__item">
+        <label for="threshold">Threshold:</label>
+        <input type="number" name="threshold" id="threshold" min="0" max="255" value="150" required>
+    </div>
+
+    <button type="submit">Apply</button>
+</form>
