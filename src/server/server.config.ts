@@ -20,7 +20,7 @@ app.use(express.static(path.resolve(__dirname, '../website')));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-	console.log('inside (/) route ...');
+	console.log('\ninside (/) route ...');
 	res.render('index');
 });
 
